@@ -49,8 +49,9 @@ services:
         env:
           POLICY_NAME: '[catalog-api] PUBLISH Component Chart Checks'
           GIT_REPO: catalog-api-repo
+          GIT_BRANCH: master
           APP_NAME: catalog-api
-          CF_APP_NAME: 'catalog-api-{{timestamp}}'
+          IMAGE_NAME: 'catalog-api-{{timestamp}}'
           REGISTRY_REGION_ID: '{{form.pipeline.parameters.registry-region}}'
           REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'            
@@ -77,8 +78,9 @@ services:
         env:
           POLICY_NAME: '[orders-api] PUBLISH Component Chart Checks'
           GIT_REPO: orders-api-repo
+          GIT_BRANCH: master
           APP_NAME: orders-api
-          CF_APP_NAME: 'orders-api-{{timestamp}}'
+          IMAGE_NAME: 'orders-api-{{timestamp}}'
           REGISTRY_REGION_ID: '{{form.pipeline.parameters.registry-region}}'
           REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'          
@@ -107,8 +109,9 @@ services:
           POLICY_NAME: '[ui] PUBLISH Component Chart Checks'
           SAUCE_LABS: test
           GIT_REPO: ui-repo
+          GIT_BRANCH: master
           APP_NAME: ui
-          CF_APP_NAME: 'ui-{{timestamp}}'
+          IMAGE_NAME: 'ui-{{timestamp}}'
           REGISTRY_REGION_ID: '{{form.pipeline.parameters.registry-region}}'
           REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'            
@@ -137,17 +140,16 @@ services:
         env:
           SAUCE_LABS: test
           GIT_REPO: umbrella-repo
-          CF_APP_NAME: '{{form.pipeline.parameters.umbrella-app-name}}'
+          GIT_BRANCH: master
+          APP_NAME: '{{form.pipeline.parameters.umbrella-app-name}}'
           REGISTRY_REGION_ID: '{{form.pipeline.parameters.registry-region}}'
           REGISTRY_NAMESPACE: '{{form.pipeline.parameters.registry-namespace}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'          
-          STAGING_SPACE_NAME: '{{form.pipeline.parameters.staging-space}}'
-          STAGING_ORG_NAME: '{{form.pipeline.parameters.staging-organization}}'
+          STAGING_RESOURCE_GROUP: '{{form.pipeline.parameters.staging-resource-group}}'
           STAGING_REGION_ID: '{{form.pipeline.parameters.staging-region}}'
           STAGING_CLUSTER_NAME: '{{form.pipeline.parameters.staging-cluster-name}}'
           STAGING_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.staging-cluster-namespace}}'
-          PROD_SPACE_NAME: '{{form.pipeline.parameters.prod-space}}'
-          PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
+          PROD_RESOURCE_GROUP: '{{form.pipeline.parameters.prod-resource-group}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
           PROD_CLUSTER_NAME: '{{form.pipeline.parameters.prod-cluster-name}}'
           PROD_CLUSTER_NAMESPACE: '{{form.pipeline.parameters.prod-cluster-namespace}}'
