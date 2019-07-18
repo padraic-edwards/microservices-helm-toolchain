@@ -17,7 +17,6 @@ template:
     - orders-api-repo
     - ui-repo
     - umbrella-repo
-    - registry
   info:
     git url: >-
       [https://github.com/open-toolchain/microservices-helm-toolchain](https://github.com/open-toolchain/microservices-helm-toolchain)
