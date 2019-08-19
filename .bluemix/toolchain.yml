@@ -17,7 +17,6 @@ template:
     - orders-api-repo
     - ui-repo
     - umbrella-repo
-    - registry
     - alerting
   info:
     git url: >-
