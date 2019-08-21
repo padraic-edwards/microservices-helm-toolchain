@@ -31,7 +31,7 @@ stages:
       source <(curl -sSL "https://raw.githubusercontent.com/open-toolchain/commons/master/scripts/fetch_git_creds.sh")
       # record Insights information
       BUILD_STATUS=pass
-      ibmcloud login --apikey $IBM_CLOUD_API_KEY -c --no-region
+      ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
       ibmcloud doi publishbuildrecord --logicalappname="$APP_NAME" --buildnumber=$BUILD_NUMBER --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$BUILD_STATUS
   - name: Unit Tests
     type: tester
